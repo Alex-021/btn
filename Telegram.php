@@ -51,7 +51,9 @@ class Telegram {
       );
 
     $inlineKeyboard = array(
-      "inline_keyboard" => $keyboardArray
+      "inline_keyboard" => $keyboardArray,
+      "one_time_keyboard" => true,
+      "resize_keyboard" => true
     );
 
     $text = "لطفا یکی از دکمه های زیر را انتخاب کنید :";
