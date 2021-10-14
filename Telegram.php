@@ -40,7 +40,65 @@ class Telegram {
     file_get_contents($url);
 
   }
-
+  public function setKeyBoard() {
+   $keyboard = array(
+  "keyboard" =>
+    array( // one => main board
+      array( // two => rows board // #1
+        array( // three => columns board
+          "text" => "One"
+        ),
+        array(
+          "text" => "Two"
+        ),
+        array(
+          "text" => "Three"
+        ),
+        array(
+          "text" => "Four"
+        )
+      ),
+      array( // two => rows board // #2
+        array(
+          "text" => "Five"
+        ),
+        array(
+          "text" => "Six"
+        ),
+        array(
+          "text" => "Seven"
+        )
+      ),
+      array( // two => rows board // #3
+        array(
+          "text" => "Eight"
+        ),
+        array(
+          "text" => "Nine"
+        )
+      ),
+      array( // two => rows board // #4
+        array(
+          "text" => "Ten"
+        )
+      )
+    ),
+  "one_time_keyboard" => true,
+  "resize_keyboard" => true
+);
+   
+   $text = "این کجاس؟: ";
+    $text = urlencode($text);
+   
+   $keyboard = json_encode($keyboard);
+   
+   $url = "https://api.telegram.org/bot" . _TOKEN;
+    $url .= "/sendMessage?chat_id=" . $this->getChatId();
+    $url .= "&text=" . $text;
+    $url .= "&reply_markup=" . $keyboard;
+    file_get_contents($url);
+  }
+ 
   public function setInlineButton() {
     $keyboardArray =
       array(
@@ -51,9 +109,7 @@ class Telegram {
       );
 
     $inlineKeyboard = array(
-      "inline_keyboard" => $keyboardArray,
-      "one_time_keyboard" => true,
-      "resize_keyboard" => true
+      "inline_keyboard" => $keyboardArray
     );
 
     $text = "لطفا یکی از دکمه های زیر را انتخاب کنید :";
