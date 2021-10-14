@@ -79,7 +79,7 @@ class Telegram {
       ),
       array( // two => rows board // #4
         array(
-          "text" => "Ten"
+          "text" => "/start"
         )
       )
     ),
