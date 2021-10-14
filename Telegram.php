@@ -30,7 +30,7 @@ class Telegram {
     $url .= "&text=" . $message;
     $results = file_get_contents($url);
 
-    sleep(10);
+//     sleep(10);
 
     $results = json_decode($results);
     $messageId = $results->message_id;
