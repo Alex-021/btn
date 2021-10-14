@@ -21,13 +21,12 @@ switch ($messageText) {
     $tg->sendMessage($message);
     break;
   case "2":
-    $message = "شما بر روی گزینه سمت چپ کلیک کرده اید و مقدار نمایشی آن Two و مقدار ارسالی آن 2 است ،";
-    $message .= " این پیام پس از ده ثانیه به طور خودکار پاک می گردد.";
+    $message = "یک دکمه انتخاب کنید: ";
     $tg->sendMessage($message);
+    $tg->setKeyBoard();
     break;
   default:
     $message = "دستور ناشناخته است !";
     $tg->sendMessage($message);
     break;
 }
-
