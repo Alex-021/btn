@@ -30,3 +30,4 @@ switch ($messageText) {
     $tg->sendMessage($message);
     break;
 }
+
